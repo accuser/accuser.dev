@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	@apply bg-slate-100 dark:bg-black;
+}
+
+body {
+	@apply overflow-y-scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-serif;
+}
+
+pre {
+	code {
+		.comment,
+		.prolog,
+		.doctype,
+		.cdata {
+			@apply text-green-500;
+		}
+
+		.punctuation {
+			@apply text-blue-400;
+		}
+
+		.namespace {
+			@apply opacity-75;
+		}
+
+		.property,
+		.tag,
+		.boolean,
+		.number,
+		.constant,
+		.symbol,
+		.deleted {
+			@apply text-blue-500;
+		}
+
+		.selector,
+		.attr-name,
+		.string,
+		.char,
+		.builtin,
+		.inserted {
+			@apply text-blue-400;
+		}
+
+		.operator,
+		.entity,
+		.url,
+		.language-css .string,
+		.style .string {
+			@apply text-orange-500;
+		}
+
+		.atrule,
+		.attr-value,
+		.keyword {
+			@apply text-red-500;
+		}
+
+		.function,
+		.class-name {
+			@apply text-orange-500;
+		}
+
+		.regex,
+		.important,
+		.variable {
+			@apply text-red-500;
+		}
+
+		.important,
+		.bold {
+			font-weight: bold;
+		}
+		.italic {
+			font-style: italic;
+		}
+
+		.entity {
+			cursor: help;
+		}
+	}
+}

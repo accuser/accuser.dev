@@ -1,0 +1,15 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/typescript-node",
+	"forwardPorts": [5173],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bradlc.vscode-tailwindcss",
+				"csstools.postcss",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"svelte.svelte-vscode"
+			]
+		}
+	}
+}

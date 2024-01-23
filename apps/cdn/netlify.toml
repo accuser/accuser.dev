@@ -1,0 +1,6 @@
+[build]
+	base = "apps/cdn/"
+	publish = "apps/cdn/public/"
+
+[functions]
+	directory = "apps/cdn/src/functions"

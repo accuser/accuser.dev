@@ -1,0 +1,23 @@
+{
+	"name": "cdn",
+	"version": "1.0.0",
+	"description": "CDN service for HealthWebinars.",
+	"scripts": {
+		"build": "netlify build --offline",
+		"deploy": "netlify deploy --skip-functions-cache",
+		"deploy:prod": "netlify deploy --prod",
+		"dev": "netlify functions:serve",
+		"format": "prettier --plugin-search-dir . --write .",
+		"lint": "prettier --plugin-search-dir . --check . && eslint ."
+	},
+	"devDependencies": {
+		"@netlify/functions": "^2.5.1",
+		"@packages/types": "workspace:^",
+		"@sanity/image-url": "^1.0.2",
+		"@types/node": "^20.11.5",
+		"netlify-cli": "^17.15.2",
+		"prettier": "^3.2.4",
+		"typescript": "^5.3.3",
+		"undici": "^6.4.0"
+	}
+}

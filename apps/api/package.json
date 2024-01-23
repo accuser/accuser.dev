@@ -1,0 +1,29 @@
+{
+	"name": "api",
+	"version": "1.0.0",
+	"description": "API service.",
+	"type": "module",
+	"scripts": {
+		"build": "netlify build --offline",
+		"deploy": "netlify deploy --skip-functions-cache",
+		"deploy:prod": "netlify deploy --prod",
+		"dev": "netlify functions:serve",
+		"format": "prettier --write src",
+		"lint": "prettier --check src && eslint src"
+	},
+	"devDependencies": {
+		"@netlify/functions": "^2.5.1",
+		"@packages/types": "workspace:^",
+		"@services/categories": "workspace:^",
+		"@services/people": "workspace:^",
+		"@services/posts": "workspace:^",
+		"@types/node": "^20.11.5",
+		"@typescript-eslint/eslint-plugin": "^6.19.1",
+		"@typescript-eslint/parser": "^6.19.1",
+		"eslint": "^8.56.0",
+		"netlify-cli": "^17.15.2",
+		"prettier": "^3.2.4",
+		"serverless-http": "^3.2.0",
+		"typescript": "^5.3.3"
+	}
+}

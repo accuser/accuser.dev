@@ -1,0 +1,6 @@
+/categories		/.netlify/builders/categories/			200
+/categories/*	/.netlify/builders/categories/:splat	200
+/people			/.netlify/builders/people/				200
+/people/*		/.netlify/builders/people/:splat		200
+/posts			/.netlify/builders/posts/				200
+/posts/*		/.netlify/builders/posts/:splat			200
