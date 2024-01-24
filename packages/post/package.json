@@ -1,0 +1,30 @@
+{
+	"name": "@packages/post",
+	"version": "1.0.0",
+	"description": "Post type.",
+	"author": {
+		"email": "mhgibbons@me.com",
+		"name": "Matthew Gibbons",
+		"url": "https://githib.com/accuser"
+	},
+	"license": "UNLICENSED",
+	"type": "module",
+	"main": "src/index.ts",
+	"scripts": {
+		"format": "prettier --write src",
+		"lint": "prettier --check src && eslint src",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"@packages/category": "workspace:^",
+		"@packages/json-api": "workspace:^",
+		"@packages/person": "workspace:^",
+		"@packages/types": "workspace:^",
+		"@portabletext/types": "^2.0.8",
+		"@sanity/client": "^6.11.1",
+		"@types/node": "^20.11.5",
+		"groq": "^3.25.0",
+		"prettier": "^3.2.4",
+		"typescript": "^5.3.3"
+	}
+}
