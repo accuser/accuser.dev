@@ -13,7 +13,6 @@
 	},
 	"devDependencies": {
 		"@netlify/functions": "^2.5.1",
-		"@packages/types": "workspace:^",
 		"@services/categories": "workspace:^",
 		"@services/people": "workspace:^",
 		"@services/posts": "workspace:^",
