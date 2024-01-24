@@ -12,7 +12,6 @@
 	},
 	"devDependencies": {
 		"@netlify/functions": "^2.5.1",
-		"@packages/types": "workspace:^",
 		"@sanity/image-url": "^1.0.2",
 		"@types/node": "^20.11.5",
 		"netlify-cli": "^17.15.2",
