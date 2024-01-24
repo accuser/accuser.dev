@@ -21,6 +21,18 @@
 			"path": "../content"
 		},
 		{
+			"name": "category",
+			"path": "../packages/category"
+		},
+		{
+			"name": "person",
+			"path": "../packages/person"
+		},
+		{
+			"name": "post",
+			"path": "../packages/post"
+		},
+		{
 			"name": "sanity",
 			"path": "../packages/sanity"
 		},
