@@ -1,6 +1,6 @@
 [build]
 	base = "apps/api/"
-	publish = "apps/api/public/"
+	publish = "public/"
 
 [functions]
-  directory = "apps/api/src/functions"
+	directory = "src/functions/"

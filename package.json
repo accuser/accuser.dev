@@ -8,7 +8,6 @@
 		"format": "turbo format"
 	},
 	"devDependencies": {
-		"netlify-cli": "latest",
 		"pnpm": "latest",
 		"turbo": "latest"
 	},
