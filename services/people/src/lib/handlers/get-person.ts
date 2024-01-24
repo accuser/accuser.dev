@@ -5,14 +5,14 @@ export default (async (req, res, next) => {
 	const {
 		app: {
 			locals: {
-				queries: { fetchPerson }
+				queries: { fetchPersonBySlug }
 			}
 		},
 		params: { slug }
 	} = req;
 
 	try {
-		const response = await fetchPerson(slug);
+		const response = await fetchPersonBySlug(slug);
 
 		if (response) {
 			res
