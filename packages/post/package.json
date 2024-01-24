@@ -19,7 +19,6 @@
 		"@packages/category": "workspace:^",
 		"@packages/json-api": "workspace:^",
 		"@packages/person": "workspace:^",
-		"@packages/types": "workspace:^",
 		"@portabletext/types": "^2.0.8",
 		"@sanity/client": "^6.11.1",
 		"@types/node": "^20.11.5",
