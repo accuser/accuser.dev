@@ -1,5 +1,5 @@
 /**
- * Handle `GET /` request.
+ * Handle `GET /categories` request.
  */
 export default (async (req, res, next) => {
 	const {

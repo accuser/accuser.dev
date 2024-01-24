@@ -1,18 +1,18 @@
 /**
- * Handle `GET /:slug` request
+ * Handle `GET /categories/:slug` request
  */
 export default (async (req, res, next) => {
 	const {
 		app: {
 			locals: {
-				queries: { fetchCategory }
+				queries: { fetchCategoryBySlug }
 			}
 		},
 		params: { slug }
 	} = req;
 
 	try {
-		const response = await fetchCategory(slug);
+		const response = await fetchCategoryBySlug(slug);
 
 		if (response) {
 			res
