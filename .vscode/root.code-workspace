@@ -1,52 +1,7 @@
 {
 	"folders": [
 		{
-			"name": "root",
 			"path": ".."
-		},
-		{
-			"name": "api",
-			"path": "../apps/api"
-		},
-		{
-			"name": "cdn",
-			"path": "../apps/cdn"
-		},
-		{
-			"name": "web",
-			"path": "../apps/web"
-		},
-		{
-			"name": "content",
-			"path": "../content"
-		},
-		{
-			"name": "category",
-			"path": "../packages/category"
-		},
-		{
-			"name": "person",
-			"path": "../packages/person"
-		},
-		{
-			"name": "post",
-			"path": "../packages/post"
-		},
-		{
-			"name": "sanity",
-			"path": "../packages/sanity"
-		},
-		{
-			"name": "categories",
-			"path": "../services/categories"
-		},
-		{
-			"name": "people",
-			"path": "../services/people"
-		},
-		{
-			"name": "posts",
-			"path": "../services/posts"
-		},
+		}
 	]
 }

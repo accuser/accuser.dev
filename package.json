@@ -8,8 +8,8 @@
 		"format": "turbo format"
 	},
 	"devDependencies": {
-		"pnpm": "latest",
-		"turbo": "latest"
+		"pnpm": "^8.14.3",
+		"turbo": "^1.11.3"
 	},
 	"packageManager": "pnpm@8.9.0",
 	"engines": {
