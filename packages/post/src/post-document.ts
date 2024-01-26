@@ -14,6 +14,6 @@ export type PostDocument = Readonly<
 		slug: {
 			current: string;
 		};
-		tags: string[];
+		tags: { label: string; value: string }[];
 	}>
 >;

@@ -12,21 +12,21 @@ export interface PostLike {
 
 export type Post = Readonly<
 	PostLike & {
-		attributes: {
-			body: PortableTextBlock;
-			lede: PortableTextBlock;
-			publishedAt: string;
-			tags: string[];
-			title: string;
+		attributes?: {
+			body?: PortableTextBlock;
+			lede?: PortableTextBlock;
+			publishedAt?: string;
+			tags: { label: string; value: string }[];
+			title?: string;
 		};
-		links: Record<string, Link>;
-		meta: Record<string, JSONValue>;
-		relationships: {
-			author: {
+		links?: Record<string, Link>;
+		meta?: Record<string, JSONValue>;
+		relationships?: {
+			author?: {
 				data: PersonLike;
 				links: Record<string, Link>;
 			};
-			category: {
+			category?: {
 				data: CategoryLike;
 				links: Record<string, Link>;
 			};
@@ -35,60 +35,58 @@ export type Post = Readonly<
 >;
 
 export namespace Post {
-	export const from = ({
-		_id,
-		_createdAt,
-		_rev,
-		_updatedAt,
-		author,
-		body,
-		category,
-		lede,
-		publishedAt,
-		slug,
-		tags,
-		title
-	}: PostDocument): Post => ({
-		type: 'posts',
-		id: _id,
-		attributes: {
-			body,
-			lede,
-			publishedAt,
-			tags,
-			title
-		},
-		links: {
-			self: `/posts/${slug.current}`
-		},
-		meta: {
-			createdAt: _createdAt,
-			updatedAt: _updatedAt,
-			revision: _rev
-		},
-		relationships: {
-			author: {
-				data: {
-					type: 'people',
-					id: '_ref' in author ? author._ref : author._id
-				},
-				links: {
-					self: `/posts/${slug}/relationships/author`,
-					related: `/posts/${slug}/author`
-				}
+	export type Relationships = 'author' | 'category';
+
+	export const from = (document: PostDocument): Post => {
+		if (document === null || document === undefined) {
+			throw new Error('`document` cannot be null or undefined');
+		}
+
+		const {
+			_id,
+			_type,
+			_createdAt,
+			_rev,
+			_updatedAt,
+			author,
+			category,
+			slug: { current: slug },
+			...attributes
+		} = document;
+
+		void [_type, _createdAt, _rev, _updatedAt];
+
+		return {
+			type: 'posts',
+			id: _id,
+			attributes,
+			links: {
+				self: `/posts/${slug}`
 			},
-			category: {
-				data: {
-					type: 'categories',
-					id: '_ref' in category ? category._ref : category._id
+			relationships: {
+				author: {
+					data: {
+						type: 'people',
+						id: '_ref' in author ? author._ref : author._id
+					},
+					links: {
+						self: `/posts/${slug}/relationships/author`,
+						related: `/posts/${slug}/author`
+					}
 				},
-				links: {
-					self: `/posts/${slug}/relationships/category`,
-					related: `/posts/${slug}/category`
+				category: {
+					data: {
+						type: 'categories',
+						id: '_ref' in category ? category._ref : category._id
+					},
+					links: {
+						self: `/posts/${slug}/relationships/category`,
+						related: `/posts/${slug}/category`
+					}
 				}
 			}
-		}
-	});
+		};
+	};
 
 	export const fromReference = ({ _ref }: PostReference): PostLike => ({
 		type: 'posts',

@@ -1,36 +1,40 @@
 import buildSanity from '$lib/builders/build-sanity.js';
-import buildQueries from '$lib/builders/build-queries.js';
-import { Category } from '@packages/category';
-import { Post } from '@packages/post';
-import { Person } from '@packages/person';
+import * as categories from '@packages/categories';
+import * as people from '@packages/people';
+import * as posts from '@packages/posts';
+
+type FunctionReturnTypes<T> = {
+	[K in keyof T]: T[K] extends (...args: any[]) => any ? ReturnType<T[K]> : never;
+};
 
 declare module 'express-serve-static-core' {
 	interface Locals {
-		queries: {
-			fetchCategories: () => Promise<Category[]>;
-			fetchCategory: (id: string) => Promise<Category>;
-			fetchCategoryBySlug: (slug: string) => Promise<Category>;
-			fetchLatestPost: () => Promise<Post>;
-			fetchPeople: () => Promise<Person[]>;
-			fetchPerson: (id: string) => Promise<Person>;
-			fetchPersonBySlug: (slug: string) => Promise<Person>;
-			fetchPost: (id: string) => Promise<Post>;
-			fetchPostBySlug: (slug: string) => Promise<Post>;
-			fetchPosts: () => Promise<Post[]>;
-			fetchRecentPosts: () => Promise<Post[]>;
-		};
+		queries: FunctionReturnTypes<typeof categories> &
+			FunctionReturnTypes<typeof people> &
+			FunctionReturnTypes<typeof posts>;
 	}
 }
 
 export default () => {
 	const sanity = buildSanity();
-	const queries = buildQueries(sanity);
 
 	return ((req, res, next) => {
-		req.app.locals.queries = queries;
+		req.app.locals.queries = {
+			fetchCategories: categories.fetchCategories(sanity),
+			fetchCategory: categories.fetchCategory(sanity),
+			fetchCategoryBySlug: categories.fetchCategoryBySlug(sanity),
+
+			fetchPeople: people.fetchPeople(sanity),
+			fetchPersonBySlug: people.fetchPersonBySlug(sanity),
+			fetchPerson: people.fetchPerson(sanity),
+
+			fetchLatestPost: posts.fetchLatestPost(sanity),
+			fetchPost: posts.fetchPost(sanity),
+			fetchPostBySlug: posts.fetchPostBySlug(sanity),
+			fetchPosts: posts.fetchPosts(sanity),
+			fetchRecentPosts: posts.fetchRecentPosts(sanity)
+		};
 
 		next();
 	}) as import('express').RequestHandler;
 };
-
-export type { Category, Person, Post };

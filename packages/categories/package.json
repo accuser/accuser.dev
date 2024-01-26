@@ -1,7 +1,7 @@
 {
-	"name": "@packages/post",
+	"name": "@packages/categories",
 	"version": "1.0.0",
-	"description": "Post type.",
+	"description": "Categories.",
 	"author": {
 		"email": "mhgibbons@me.com",
 		"name": "Matthew Gibbons",
@@ -18,7 +18,6 @@
 	"devDependencies": {
 		"@packages/category": "workspace:^",
 		"@packages/json-api": "workspace:^",
-		"@packages/person": "workspace:^",
 		"@portabletext/types": "^2.0.8",
 		"@sanity/client": "^6.11.3",
 		"@types/node": "^20.11.7",

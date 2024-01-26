@@ -18,9 +18,8 @@
 	"devDependencies": {
 		"@packages/json-api": "workspace:^",
 		"@portabletext/types": "^2.0.8",
-		"@sanity/client": "^6.11.1",
-		"@types/node": "^20.11.5",
-		"groq": "^3.25.0",
+		"@sanity/client": "^6.11.3",
+		"@types/node": "^20.11.7",
 		"prettier": "^3.2.4",
 		"typescript": "^5.3.3"
 	}

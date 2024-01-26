@@ -1,0 +1,26 @@
+{
+	"name": "@packages/posts",
+	"version": "0.1.0",
+	"description": "Sanity package for posts.",
+	"license": "UNLICENSED",
+	"type": "module",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "vitest"
+	},
+	"keywords": [
+		"webinars",
+		"service"
+	],
+	"devDependencies": {
+		"@packages/category": "workspace:^",
+		"@packages/json-api": "workspace:^",
+		"@packages/person": "workspace:^",
+		"@packages/post": "workspace:^",
+		"@sanity/client": "^6.11.3",
+		"@types/node": "^20.11.7",
+		"groq": "^3.26.0",
+		"prettier": "^3.2.4",
+		"typescript": "^5.3.3"
+	}
+}
