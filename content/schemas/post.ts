@@ -1,5 +1,12 @@
 import {defineField, defineType} from 'sanity';
 
+const slugify = (value: string) =>
+	value
+		.toLowerCase()
+		.replace(/[^-\s\w]+/g, '')
+		.replace(/[-_\s]+/g, '-')
+		.replace(/^[-_]+|[-_]+$/, '');
+
 export default defineType({
 	name: 'post',
 	title: 'Post',
@@ -23,7 +30,6 @@ export default defineType({
 			name: 'lede',
 			title: 'Lede',
 			type: 'text',
-			rows: 3,
 		}),
 		defineField({
 			name: 'author',
@@ -51,6 +57,10 @@ export default defineType({
 			type: 'tags',
 			options: {
 				includeFromRelated: 'tags',
+				onCreate: (value: string) => ({
+					label: value,
+					value: slugify(value),
+				}),
 			},
 		}),
 		defineField({
