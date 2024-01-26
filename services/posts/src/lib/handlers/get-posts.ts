@@ -11,7 +11,7 @@ export default (async (req, res, next) => {
 	} = req;
 
 	try {
-		const response = await fetchPosts();
+		const response = await fetchPosts({ include: ['author', 'category'] });
 
 		res
 			.status(200)

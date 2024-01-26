@@ -11,7 +11,7 @@ export default (async (req, res, next) => {
 	} = req;
 
 	try {
-		const response = await fetchLatestPost();
+		const response = await fetchLatestPost({ include: ['author', 'category'] });
 
 		if (response) {
 			res

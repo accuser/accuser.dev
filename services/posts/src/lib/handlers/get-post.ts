@@ -12,7 +12,7 @@ export default (async (req, res, next) => {
 	} = req;
 
 	try {
-		const response = await fetchPostBySlug(slug);
+		const response = await fetchPostBySlug(slug, { include: ['author', 'category'] });
 
 		if (response) {
 			res
