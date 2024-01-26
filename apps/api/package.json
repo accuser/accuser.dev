@@ -7,7 +7,7 @@
 		"build": "netlify build --offline",
 		"deploy": "netlify deploy --skip-functions-cache",
 		"deploy:prod": "netlify deploy --prod",
-		"dev": "netlify functions:serve",
+		"dev": "netlify dev",
 		"format": "prettier --write src",
 		"lint": "prettier --check src && eslint src"
 	},
@@ -16,11 +16,11 @@
 		"@services/categories": "workspace:^",
 		"@services/people": "workspace:^",
 		"@services/posts": "workspace:^",
-		"@types/node": "^20.11.5",
+		"@types/node": "^20.11.7",
 		"@typescript-eslint/eslint-plugin": "^6.19.1",
 		"@typescript-eslint/parser": "^6.19.1",
 		"eslint": "^8.56.0",
-		"netlify-cli": "^17.15.2",
+		"netlify-cli": "^17.15.3",
 		"prettier": "^3.2.4",
 		"serverless-http": "^3.2.0",
 		"typescript": "^5.3.3"
